@@ -1,7 +1,7 @@
 # Instalación y configuración del servidor web Nginx Virtual Hosts
 
 
-<details open>
+<details close>
     <summary>  Instrucción </summary>
 <br>
 Como hemos visto en clase Ngnix es un servidor web ligero y eficiente. En la presente práctica, primero deberás configurar dos virtual hosts y acceder a ellos usando diferentes subdominios.
@@ -37,7 +37,7 @@ Podemos comprobar si la instalación se ha realizado con éxito ingresando a nue
 ![instalación](imagenes/instalacionNginx.png)
 
 
-<details open>
+<details close>
     <summary>  ¿Cómo obtener nuestra IP? </summary>
 <br>
 
@@ -72,7 +72,7 @@ sudo cp default practica.babyWantsMilk.com
 
 Así tendremos dos subdominios donde podremos tener diferente contenido. 
 
-Ahora procedemos a modificar la configuracion de los dos subdominios creados.
+Ahora procedemos a modificar la configuración de los dos subdominios creados.
 
 Primero modificaremos el subdominio `practica.antColony.com`:
 
@@ -82,7 +82,7 @@ Y después `practica.babyWantsMilk.com`:
 
 ![babyWantsMilkConf](imagenes/babyWantsFinal.png)
 
-Ahora debemos activar estos sitios realizando un link simbolico de los archivos de`sites-avaliable` a `sites-enabled` haciendo lo siguinte:
+Ahora debemos activar estos sitios realizando un link simbólico de los archivos de `sites-avaliable` a `sites-enabled` haciendo lo siguiente:
 
 ```console
 sudo ln -s ../sites-available/practica.antColony.com .
@@ -111,7 +111,7 @@ sudo mkdir /var/www/babyWantsMilk
 Una vez hecho esto ingresamos el código fuente extraido de el sitio [OneHTMLPage](https://onehtmlpagechallenge.com/):
 
 
-<details open>
+<details close>
     <summary>  Código fuente </summary>
 <br>
 
@@ -127,4 +127,7 @@ Una vez hecho esto ingresamos el código fuente extraido de el sitio [OneHTMLPag
 Ahora si ingresamos al navegador podemos ver que en los dominios *http://practica.babywantsmilk.com/* y *http://practica.antcolony.com/* nos aparece lo siguiente:
 
 ![navegador baby](imagenes/babyNavegador.png) 
+
+<br>
+
 ![navegador ant](imagenes/antNavegador.png)
