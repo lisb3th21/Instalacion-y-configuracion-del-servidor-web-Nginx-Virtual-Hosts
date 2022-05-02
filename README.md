@@ -12,6 +12,119 @@ Deberéis documentar el proceso en formato markdown en un README.MD, con captura
     
 [Video Referencia](https://www.youtube.com/watch?v=_LQv96MdtCk)
 
+### Notas
+
+```
+Haré esta instalación en un Ubuntu. 
+```
+
 </details>
 
 
+
+## Instalación de Nginx
+
+Nginx es un servidor web de código abierto diseñado para un uso bajo de memoria y una alta concurrencia. 
+
+Para instalar Nginx debemos realizar lo siguiente:
+
+```console
+sudo apt-get install nginx
+```
+
+Podemos comprobar si la instalación se ha realizado con éxito ingresando a nuestra IP en nuestro navegador:
+
+![instalación](imagenes/instalacionNginx.png)
+
+
+<details open>
+    <summary>  ¿Cómo obtener nuestra IP? </summary>
+<br>
+
+Podemos obtener nuestra IP con el siguiente comando:
+
+```console
+ip addr
+```
+
+![IP](imagenes/Screenshot%20from%202022-05-02%2008-41-05.png)
+
+</details>
+
+<br>
+
+## 🔨 Configuración de Nginx
+
+El directorio `/etc/` es el encargado de almacenar los archivos de configuración de los programas. Por lo que nos dirigimos a este dónde debería estar la carpeta de *Nginx*:
+
+![carpeta config](imagenes/carpetaConfig.png)
+
+En la carpeta de *Nginx* encontramos la carpeta *sites-avaliable* 
+
+Donde encontramos el archivo *default*. Este archivo contendrá la configuración del servidor. Ahora bien lo copiamos para crear dos páginas nosotros con el siguiente comando:
+
+
+```console 
+sudo cp default practica.antColony.com
+
+sudo cp default practica.babyWantsMilk.com
+```
+
+Así tendremos dos subdominios donde podremos tener diferente contenido. 
+
+Ahora procedemos a modificar la configuracion de los dos subdominios creados.
+
+Primero modificaremos el subdominio `practica.antColony.com`:
+
+![antColonyConfiguration](imagenes/antColonyFinal.png)
+
+Y después `practica.babyWantsMilk.com`:
+
+![babyWantsMilkConf](imagenes/babyWantsFinal.png)
+
+Ahora debemos activar estos sitios realizando un link simbolico de los archivos de`sites-avaliable` a `sites-enabled` haciendo lo siguinte:
+
+```console
+sudo ln -s ../sites-available/practica.antColony.com .
+sudo ln -s ../sites-available/practica.babyWantsMilk.com .
+```
+
+![links simbolicos](imagenes/linkSimbolico.png)
+
+
+Ahora recargamos *Nginx* para que carge las nuevas configuraciones:
+
+```console
+sudo nginx -s reload
+```
+
+Ahora, para que nuestro navegador apunte a nuestra IP es necesario modificar el archivo `host` que se encuentra en `/etc/host/`:
+
+![host config](imagenes/confiHosts.png)
+
+Una vez hecho esto, creamos las carpetas *antColony* y *babyWantsMilk*:
+
+```console
+sudo mkdir /var/www/antColony
+sudo mkdir /var/www/babyWantsMilk
+```
+Una vez hecho esto ingresamos el código fuente extraido de el sitio [OneHTMLPage](https://onehtmlpagechallenge.com/):
+
+
+<details open>
+    <summary>  Código fuente </summary>
+<br>
+
+
+![codigo1](imagenes/AntCodigoFuente.png)
+
+![codigo2](imagenes/babyCodigoFuente.png)
+
+</details>
+
+## Resultado 
+
+Ahora si ingresamos al navegador podemos ver que en los dominios *http://practica.babywantsmilk.com/* y *http://practica.antcolony.com/* nos aparece lo siguiente:
+
+![navegador baby](imagenes/babyNavegador.png) 
+![navegador ant](imagenes/antNavegador.png)
