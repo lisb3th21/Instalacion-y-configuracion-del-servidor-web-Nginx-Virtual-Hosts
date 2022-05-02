@@ -131,3 +131,11 @@ Ahora si ingresamos al navegador podemos ver que en los dominios *http://practic
 <br>
 
 ![navegador ant](imagenes/antNavegador.png)
+
+
+## Creditos
+
+[BabyWantsMilk.html](https://github.com/Metroxe/one-html-page-challenge/blob/master/entries/BabyWantsMilk.html)
+
+[ant_colony.html](https://github.com/Metroxe/one-html-page-challenge/blob/master/entries/ant_colony.html)
+
