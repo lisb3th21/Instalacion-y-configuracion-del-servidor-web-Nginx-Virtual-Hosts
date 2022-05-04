@@ -4,7 +4,7 @@
 
 
 <details close>
-    <summary>  Instrucción </summary>
+    <summary>  Enunciado del trabajo </summary>
 <br>
 Como hemos visto en clase Ngnix es un servidor web ligero y eficiente. En la presente práctica, primero deberás configurar dos virtual hosts y acceder a ellos usando diferentes subdominios.
 
