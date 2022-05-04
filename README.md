@@ -19,6 +19,7 @@ Deberéis documentar el proceso en formato markdown en un README.MD, con captura
 ```
 Haré esta instalación en un Ubuntu. 
 ```
+---
 
 </details>
 
